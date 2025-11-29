@@ -1,7 +1,7 @@
 package org.iesalandalus.programacion.tallermecanico.modelo;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.cascada.ModeloCascada;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.FabricaFuenteDatos;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.FabricaFuenteDatos;
 
 public enum FabricaModelo {
 

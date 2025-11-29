@@ -4,7 +4,7 @@ import javafx.util.Pair;
 import org.iesalandalus.programacion.tallermecanico.controlador.Controlador;
 import org.iesalandalus.programacion.tallermecanico.controlador.IControlador;
 import org.iesalandalus.programacion.tallermecanico.modelo.FabricaModelo;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.FabricaFuenteDatos;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.FabricaFuenteDatos;
 import org.iesalandalus.programacion.tallermecanico.vista.FabricaVista;
 
 public class Main {

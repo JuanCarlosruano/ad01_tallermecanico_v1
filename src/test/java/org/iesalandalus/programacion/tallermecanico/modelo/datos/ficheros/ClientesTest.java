@@ -1,9 +1,8 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.negocio.ficheros;
+package org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.TallerMecanicoExcepcion;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.IClientes;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.ficheros.xml.Clientes;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.IClientes;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

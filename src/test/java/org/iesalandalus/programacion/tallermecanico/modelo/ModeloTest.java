@@ -1,13 +1,13 @@
 package org.iesalandalus.programacion.tallermecanico.modelo;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.*;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.FabricaFuenteDatos;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.IClientes;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.ITrabajos;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.IVehiculos;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.ficheros.xml.Clientes;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.ficheros.xml.Trabajos;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.ficheros.xml.Vehiculos;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.FabricaFuenteDatos;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.IClientes;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.ITrabajos;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.IVehiculos;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros.Clientes;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros.Trabajos;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros.Vehiculos;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;

@@ -3,7 +3,7 @@ package org.iesalandalus.programacion.tallermecanico.modelo.cascada;
 import org.iesalandalus.programacion.tallermecanico.modelo.Modelo;
 import org.iesalandalus.programacion.tallermecanico.modelo.TallerMecanicoExcepcion;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.*;
-import org.iesalandalus.programacion.tallermecanico.modelo.negocio.*;
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
