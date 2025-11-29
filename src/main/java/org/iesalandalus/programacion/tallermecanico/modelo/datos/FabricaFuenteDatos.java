@@ -1,12 +1,14 @@
 package org.iesalandalus.programacion.tallermecanico.modelo.datos;
 
 
+import org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros.FuenteDatosFicherosJSON;
+
 public enum FabricaFuenteDatos {
 
     FICHEROS_XML {
         @Override
         public IFuenteDatos crear() {
-            return new FuenteDatosFicherosXML();
+            return new FuenteDatosFicherosJSON();
         }
     };
 
