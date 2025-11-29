@@ -8,7 +8,7 @@ import org.iesalandalus.programacion.tallermecanico.modelo.datos.IVehiculos;
 public class FuenteDatosFicherosJSON implements IFuenteDatos {
     @Override
     public IClientes crearClientes() {
-        return Clientes.get();
+        return Clientes.getInstancia();
     }
 
     @Override
