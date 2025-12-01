@@ -16,7 +16,7 @@ public class Main {
 
     private static Pair<FabricaVista, FabricaFuenteDatos> procesarArgumentos(String[] args) {
         FabricaVista fabricaVista = FabricaVista.VENTANAS;
-        FabricaFuenteDatos fabricaFuenteDatos = FabricaFuenteDatos.FICHEROS_XML;
+        FabricaFuenteDatos fabricaFuenteDatos = FabricaFuenteDatos.FICHEROS_JSON;
         for (String argumento : args) {
             if (argumento.equalsIgnoreCase("-vventanas")) {
                 fabricaVista = FabricaVista.VENTANAS;
@@ -24,7 +24,10 @@ public class Main {
                 fabricaVista = FabricaVista.TEXTO;
             } else if (argumento.equalsIgnoreCase("-fdficherosxml")) {
                 fabricaFuenteDatos = FabricaFuenteDatos.FICHEROS_XML;
+            }else if (argumento.equalsIgnoreCase("-fdficherosjson")) {
+                fabricaFuenteDatos = FabricaFuenteDatos.FICHEROS_JSON;
             }
+
 
         }
         return new Pair<>(fabricaVista, fabricaFuenteDatos);
