@@ -15,7 +15,7 @@ import java.util.*;
 
 public class Trabajos implements ITrabajos {
 
-    private static final String FICHERO_TRABAJOS = "datos/ficheros/json/trabajos.json";
+    private static final String FICHERO_TRABAJOS = "datos" + File.separator + "ficheros" + File.separator + "json" + File.separator + "trabajos.json";
 
     private static Trabajos instancia;
     private final ObjectMapper mapper;

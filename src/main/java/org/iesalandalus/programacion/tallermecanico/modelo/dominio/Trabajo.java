@@ -1,9 +1,6 @@
 package org.iesalandalus.programacion.tallermecanico.modelo.dominio;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.*;
 import org.iesalandalus.programacion.tallermecanico.modelo.TallerMecanicoExcepcion;
 
 import java.time.LocalDate;
@@ -75,6 +72,7 @@ public abstract class Trabajo {
         return cliente;
     }
 
+
     private void setCliente(Cliente cliente) {
         Objects.requireNonNull(cliente, "El cliente no puede ser nulo.");
         this.cliente = cliente;
@@ -83,6 +81,7 @@ public abstract class Trabajo {
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
+
 
     private void setVehiculo(Vehiculo vehiculo) {
         Objects.requireNonNull(vehiculo, "El vehículo no puede ser nulo.");

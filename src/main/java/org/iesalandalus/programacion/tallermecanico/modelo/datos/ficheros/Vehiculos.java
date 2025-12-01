@@ -22,7 +22,7 @@ import org.w3c.dom.NodeList;
 public class Vehiculos implements IVehiculos {
 
 
-    private static final String FICHERO_VEHICULOS = "datos/ficheros/json/vehiculos.json";
+    private static final String FICHERO_VEHICULOS = "datos" + File.separator + "ficheros" + File.separator + "json" + File.separator + "vehiculos.json";
     private ObjectMapper mapper;
 
     private static Vehiculos instancia;
@@ -39,6 +39,7 @@ public class Vehiculos implements IVehiculos {
 
     static Vehiculos getInstancia() {
         if (instancia == null) {
+            instancia = new Vehiculos();
         }
         return instancia;
     }

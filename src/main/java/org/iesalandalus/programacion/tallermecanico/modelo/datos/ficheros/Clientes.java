@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Clientes implements IClientes {
 
 
-    private static final String FICHERO_CLIENTES = "datos/ficheros/json/clientes.json";
+    private static final String FICHERO_CLIENTES = "datos" + File.separator + "ficheros" + File.separator + "json" + File.separator + "clientes.json";
 
     private static Clientes instancia;
     private final ObjectMapper mapper;
