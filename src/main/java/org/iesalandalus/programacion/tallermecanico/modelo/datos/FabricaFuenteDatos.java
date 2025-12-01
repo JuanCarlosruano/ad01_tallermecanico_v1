@@ -10,6 +10,13 @@ public enum FabricaFuenteDatos {
         public IFuenteDatos crear() {
             return new FuenteDatosFicherosJSON();
         }
+    },
+
+    FICHEROS_JSON {
+        @Override
+        public IFuenteDatos crear() {
+            return new FuenteDatosFicherosJSON();
+        }
     };
 
     public abstract IFuenteDatos crear();
