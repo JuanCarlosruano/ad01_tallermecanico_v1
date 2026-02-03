@@ -19,7 +19,8 @@ import java.util.Objects;
 })
 
 
-public abstract class Trabajo {
+public abstract class
+Trabajo {
     public static final DateTimeFormatter FORMATO_FECHA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final float FACTOR_DIA = 10F;
 
@@ -82,7 +83,6 @@ public abstract class Trabajo {
         return vehiculo;
     }
 
-
     private void setVehiculo(Vehiculo vehiculo) {
         Objects.requireNonNull(vehiculo, "El vehículo no puede ser nulo.");
         this.vehiculo = vehiculo;
@@ -104,6 +104,7 @@ public abstract class Trabajo {
         return fechaFin;
     }
 
+    @JsonSetter(nulls = Nulls.SKIP)
     private void setFechaFin(LocalDate fechaFin) {
         Objects.requireNonNull(fechaFin, "La fecha de fin no puede ser nula.");
         if (fechaFin.isBefore(fechaInicio)) {
@@ -140,7 +141,7 @@ public abstract class Trabajo {
         setFechaFin(fechaFin);
     }
 
-
+    @JsonIgnore
     public float getPrecio() {
         return getPrecioFijo() + getPrecioEspecifico();
     }

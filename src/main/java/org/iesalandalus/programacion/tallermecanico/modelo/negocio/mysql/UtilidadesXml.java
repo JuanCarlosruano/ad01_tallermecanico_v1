@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros;
+package org.iesalandalus.programacion.tallermecanico.modelo.negocio.mysql;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;

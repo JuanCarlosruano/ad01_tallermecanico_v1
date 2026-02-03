@@ -1,11 +1,11 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros;
+package org.iesalandalus.programacion.tallermecanico.modelo.negocio.mongodb;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.iesalandalus.programacion.tallermecanico.modelo.TallerMecanicoExcepcion;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
-import org.iesalandalus.programacion.tallermecanico.modelo.datos.IClientes;
+import org.iesalandalus.programacion.tallermecanico.modelo.negocio.IClientes;
 
 import java.io.File;
 import java.io.IOException;

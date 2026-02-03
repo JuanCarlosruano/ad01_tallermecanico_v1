@@ -1,4 +1,4 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.datos;
+package org.iesalandalus.programacion.tallermecanico.modelo.negocio;
 
 import org.iesalandalus.programacion.tallermecanico.modelo.TallerMecanicoExcepcion;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.*;

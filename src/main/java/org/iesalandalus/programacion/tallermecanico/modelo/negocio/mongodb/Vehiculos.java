@@ -1,23 +1,17 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-import javax.xml.parsers.DocumentBuilder;
+package org.iesalandalus.programacion.tallermecanico.modelo.negocio.mongodb;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.iesalandalus.programacion.tallermecanico.modelo.TallerMecanicoExcepcion;
-import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.Vehiculo;
-import org.iesalandalus.programacion.tallermecanico.modelo.datos.IVehiculos;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.iesalandalus.programacion.tallermecanico.modelo.negocio.IVehiculos;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Vehiculos implements IVehiculos {
 

@@ -1,11 +1,11 @@
-package org.iesalandalus.programacion.tallermecanico.modelo.datos.ficheros;
+package org.iesalandalus.programacion.tallermecanico.modelo.negocio.json;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.iesalandalus.programacion.tallermecanico.modelo.TallerMecanicoExcepcion;
-import org.iesalandalus.programacion.tallermecanico.modelo.datos.ITrabajos;
+import org.iesalandalus.programacion.tallermecanico.modelo.negocio.ITrabajos;
 import org.iesalandalus.programacion.tallermecanico.modelo.dominio.*;
 
 import java.io.File;
@@ -16,7 +16,7 @@ import java.util.*;
 public class Trabajos implements ITrabajos {
 
     private static final String FICHERO_TRABAJOS = "datos" + File.separator + "ficheros" + File.separator + "json" + File.separator + "trabajos.json";
-
+    private static final TypeReference<List<Trabajo>> TYPE_LIST_TRABAJO = new TypeReference<>() {};
     private static Trabajos instancia;
     private final ObjectMapper mapper;
 
@@ -54,7 +54,7 @@ public class Trabajos implements ITrabajos {
             return new ArrayList<>();
         }
         try {
-            return mapper.readValue(fichero, new TypeReference<List<Trabajo>>() {});
+            return mapper.readValue(fichero, TYPE_LIST_TRABAJO);
         } catch (IOException e) {
             System.out.printf("Error al leer el fichero JSON: %s%n", e.getMessage());
             return new ArrayList<>();
@@ -64,7 +64,7 @@ public class Trabajos implements ITrabajos {
     public void escribir(List<Trabajo> trabajos) {
         Objects.requireNonNull(trabajos, "La lista de trabajos no puede ser nula.");
         try {
-            mapper.writeValue(new File(FICHERO_TRABAJOS), trabajos);
+            mapper.writerFor(TYPE_LIST_TRABAJO).withDefaultPrettyPrinter().writeValue(new File(FICHERO_TRABAJOS), trabajos);
         } catch (IOException e) {
             System.out.printf("Error al escribir en el fichero JSON: %s%n", e.getMessage());
         }
@@ -104,29 +104,13 @@ public class Trabajos implements ITrabajos {
         Objects.requireNonNull(trabajo, "No se puede insertar un trabajo nulo.");
 
         List<Trabajo> trabajos = leer();
-        comprobarTrabajo(trabajo.getCliente(), trabajo.getVehiculo(), trabajo.getFechaInicio(), trabajos);
+
 
         trabajos.add(trabajo);
         escribir(trabajos);
     }
 
-    private void comprobarTrabajo(Cliente cliente, Vehiculo vehiculo, LocalDate fechaInicio, List<Trabajo> trabajosExistentes) throws TallerMecanicoExcepcion {
-        for (Trabajo trabajo : trabajosExistentes) {
-            if (!trabajo.estaCerrado()) {
-                if (trabajo.getCliente().equals(cliente)) {
-                    throw new TallerMecanicoExcepcion("El cliente tiene otro trabajo en curso.");
-                } else if (trabajo.getVehiculo().equals(vehiculo)) {
-                    throw new TallerMecanicoExcepcion("El vehículo está actualmente en el taller.");
-                }
-            } else {
-                if (trabajo.getCliente().equals(cliente) && !fechaInicio.isAfter(trabajo.getFechaFin())) {
-                    throw new TallerMecanicoExcepcion("El cliente tiene otro trabajo posterior.");
-                } else if (trabajo.getVehiculo().equals(vehiculo) && !fechaInicio.isAfter(trabajo.getFechaFin())) {
-                    throw new TallerMecanicoExcepcion("El vehículo tiene otro trabajo posterior.");
-                }
-            }
-        }
-    }
+
 
     @Override
     public Map<TipoTrabajo, Integer> getEstadisticasMensuales(LocalDate mes) {
